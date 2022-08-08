@@ -1,0 +1,12 @@
+.footer-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  bottom: 0;
+  height: 50px;
+}
+
+.footer-text {
+  display: block;
+}
