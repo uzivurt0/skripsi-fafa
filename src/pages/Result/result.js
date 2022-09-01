@@ -4,7 +4,7 @@ import CardResult from "../../components/card-result/card-result";
 const Result = () => {
   return (
     <div className="home-container">
-      <div className="home-content-container">
+      <div className="result-content-container">
         <div className="home-content">
           <CardResult />
           <CardResult />

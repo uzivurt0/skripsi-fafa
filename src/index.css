@@ -13,6 +13,6 @@ code {
 }
 
 body {
-  background: url("./assets/images/blur layer.png") no-repeat rgb(209, 224, 227);
+  background: rgb(210, 227, 230) url("../src/assets/images/blur\ layer.png");
   background-size: cover;
 }

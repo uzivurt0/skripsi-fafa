@@ -9,6 +9,20 @@
   align-items: center;
 }
 
+.result-content-container {
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 25px;
+  width: calc(100% - 300px);
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+  min-height: 600px;
+  width: 1024px;
+  border-radius: 25px;
+  overflow-y: scroll;
+}
+
 .card-result-description-name {
   margin-bottom: 45px;
 }

@@ -10,24 +10,31 @@
 .home-content-container {
   position: relative;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 25px;
   width: calc(100% - 300px);
-  /* margin: auto; */
   background: rgba(255, 255, 255, 0.192);
   backdrop-filter: blur(10px);
   min-height: 600px;
   width: 1024px;
   border-radius: 25px;
   overflow-y: scroll;
-  /* border: 1px solid rgba(43, 43, 43, 0.568); */
 }
 
 .home-content {
+  height: inherit;
   width: 100%;
+}
+
+.home-content-item {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-content h1 {
