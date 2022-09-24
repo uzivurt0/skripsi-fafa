@@ -1,7 +1,7 @@
 import React from "react";
-import "./result.css";
+import "../../pages/Result/result.css";
 import CardResult from "../../components/card-result/card-result";
-const Result = () => {
+const HomeAdmin = () => {
   return (
     <div className="result-container">
       <div className="result-content-container">
@@ -17,4 +17,4 @@ const Result = () => {
   );
 };
 
-export default Result;
+export default HomeAdmin;

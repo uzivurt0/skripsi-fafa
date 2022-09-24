@@ -11,8 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-body {
-  background: rgb(210, 227, 230) url("../src/assets/images/blur\ layer.png");
-  background-size: cover;
-}

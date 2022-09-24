@@ -1,21 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Rakkas&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Quicksand:wght@400;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
 }
 
-a,
-p,
-button,
-h2,
-h3 {
+* {
   font-family: "Quicksand", sans-serif;
   color: rgb(0, 0, 0);
 }
 
 h1 {
-  font-family: "Rakkas", cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 75px;
 }
 

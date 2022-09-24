@@ -1,0 +1,33 @@
+.form-content-container {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  width: 100%;
+  background: rgba(161, 161, 161, 0.192);
+  height: 600px;
+  border-radius: 10px;
+}
+
+.form-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 500px;
+}
+
+.form-label {
+  font-weight: bolder;
+  line-height: 40px;
+}
+
+.form-input select {
+  border: 0px;
+  padding: 10px;
+  border-radius: 5px;
+}

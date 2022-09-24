@@ -1,6 +1,12 @@
+.result-container {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
 .card-result {
   background-color: white;
-  width: calc(100% - 30px);
+  /* width: calc(100% - 30px); */
   padding: 15px;
   margin: 25px 0;
   border-radius: 15px;
@@ -13,14 +19,19 @@
   position: relative;
   display: flex;
   height: 100%;
+  width: 100%;
   padding: 25px;
-  width: calc(100% - 300px);
-  background: rgba(255, 255, 255, 0.192);
-  backdrop-filter: blur(10px);
-  min-height: 600px;
-  width: 1024px;
-  border-radius: 25px;
-  overflow-y: scroll;
+  justify-content: center;
+  /* width: calc(100% - 300px); */
+  background: rgba(161, 161, 161, 0.192);
+  border-radius: 10px;
+  /* overflow-y: scroll; */
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-result-description-name {
