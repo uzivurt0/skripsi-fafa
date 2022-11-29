@@ -6,10 +6,10 @@
 
 .card-result {
   background-color: white;
-  /* width: calc(100% - 30px); */
-  padding: 15px;
-  margin: 25px 0;
-  border-radius: 15px;
+  width: 650px;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 8px;
   display: flex;
   text-align: left;
   align-items: center;
@@ -22,6 +22,8 @@
   width: 100%;
   padding: 25px;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   /* width: calc(100% - 300px); */
   background: rgba(161, 161, 161, 0.192);
   border-radius: 10px;
@@ -49,11 +51,14 @@
 .card-result-description {
   border-left: 1px solid rgb(218, 218, 218);
   padding-left: 25px;
+  width: 100%;
 }
 
 .card-result-description-detail {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .card-result-description-detail-item {
@@ -64,4 +69,20 @@
 .card-result-description-detail h3 {
   text-transform: uppercase;
   font-weight: bolder;
+}
+
+.result-content-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-add-button {
+  border: none;
+  color: rgb(0, 102, 255);
+  background: none;
+  font-weight: 700;
+  font-size: 22px;
 }
