@@ -9,7 +9,13 @@ const Result = () => {
 
   var jmlBobot = [];
   var jmlNormalisasiKriteria = [];
-  var normalisasiBobot = [[0]];
+  var prioritas = [];
+  var normalisasiBobot = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ];
 
   const bobotKriteria = [
     [1, 1 / 3, 1 / 5, 3],
@@ -47,10 +53,15 @@ const Result = () => {
           jmlNormalisasiKriteria[k] + normalisasiBobot[l][k];
       }
     }
+
+    for (i = 0; i < jmlNormalisasiKriteria.length; i++) {
+      prioritas[i] = jmlNormalisasiKriteria[i] / 4;
+    }
   }, []);
   console.log(jmlBobot);
   console.log(jmlNormalisasiKriteria);
   console.log(normalisasiBobot);
+  console.log(prioritas);
   return (
     <div className="result-container">
       <div className="result-content-container">
