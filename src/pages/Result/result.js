@@ -12,16 +12,19 @@ const Result = () => {
   const [data, setData] = useState([]);
 
   var jmlBobot = [];
-  var jmlBobotHrg = [];
-  var jmlBobotDiam = [];
+  const [jmlBobotHrg, setJmlBobotHrg] = useState([]);
+  const [jmlBobotDiam, setJmlBobotDiam] = useState([]);
+  const [jmlBobotPerunt, setJmlBobotPerunt] = useState([]);
 
   var jmlNormalisasiKriteria = [];
   var jmlNormalisasiHrg = [];
   var jmlNormalisasiDiam = [];
+  var jmlNormalisasiPeruntukan = [];
 
   var prioritas = [];
   var prioritasHrg = [];
   var prioritasDiam = [];
+  var prioritasPeruntukan = [];
 
   //Matriks Normalisasi
   var normalisasiBobot = [
@@ -43,6 +46,11 @@ const Result = () => {
     [0, 0, 0, 0],
   ];
 
+  var normalisasiPeruntukan = [
+    [0, 0],
+    [0, 0],
+  ];
+
   //Matriks
   var bobotKriteria = [
     [1, 1 / 3, 1 / 5],
@@ -55,12 +63,16 @@ const Result = () => {
     [0, 0, 0],
     [0, 0, 0],
   ]);
-  var bobotDiam = [
+  const [bobotDiam, setBobotDiam] = useState([
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
-  ];
+  ]);
+  const [bobotPeruntukan, setBobotPeruntukan] = useState([
+    [0, 0],
+    [0, 0],
+  ]);
 
   var filtered = [];
 
@@ -106,6 +118,7 @@ const Result = () => {
           [9, 1, 1],
         ]);
       } else if (harga === "2") {
+        console.log("masuk matriks");
         setBobotHarga([
           [1, 9, 1],
           [1 / 9, 1, 1 / 9],
@@ -120,13 +133,16 @@ const Result = () => {
       }
     }
 
+    var tempJmlBobotHrg = [];
     for (i = 0; i <= 2; i++) {
-      jmlBobotHrg[i] = 0;
+      tempJmlBobotHrg[i] = 0;
       for (j = 0; j <= 2; j++) {
-        jmlBobotHrg[i] = jmlBobotHrg[i] + bobotHarga[i][j];
+        tempJmlBobotHrg[i] = tempJmlBobotHrg[i] + bobotHarga[i][j];
         console.log("masuk itung");
       }
     }
+
+    setJmlBobotHrg(tempJmlBobotHrg);
 
     for (i = 0; i <= 2; i++) {
       jmlNormalisasiHrg[i] = 0;
@@ -139,43 +155,46 @@ const Result = () => {
     for (i = 0; i < jmlNormalisasiHrg.length; i++) {
       prioritasHrg[i] = jmlNormalisasiHrg[i] / 4;
     }
+
     //Diameter
     if (diameter === "10") {
-      bobotDiam = [
+      setBobotDiam([
         [1, 1 / 9, 1 / 9, 1 / 9],
         [9, 1, 1, 1],
         [9, 1, 1, 1],
         [9, 1, 1, 1],
-      ];
+      ]);
     } else if (diameter === "12") {
-      bobotDiam = [
+      setBobotDiam([
         [1, 9, 1, 1],
         [1 / 9, 1, 1 / 9, 1 / 9],
         [1, 9, 1, 1],
         [1, 9, 1, 1],
-      ];
+      ]);
     } else if (diameter === "14") {
-      bobotDiam = [
+      setBobotDiam([
         [1, 1, 9, 1],
         [1, 1, 9, 1],
         [1 / 9, 1 / 9, 1, 1 / 9],
         [1, 1, 9, 1],
-      ];
+      ]);
     } else if (diameter === "17") {
-      bobotDiam = [
+      setBobotDiam([
         [1, 1, 1, 9],
         [1, 1, 1, 9],
         [1, 1 / 9, 1 / 9, 1],
         [1, 1, 1, 9],
-      ];
+      ]);
     }
 
-    for (i = 0; i <= 2; i++) {
-      jmlBobotDiam[i] = 0;
-      for (j = 0; j <= 2; j++) {
-        jmlBobotDiam[i] = jmlBobotDiam[i] + bobotDiam[i][j];
+    var tempJmlBobotDiam = [];
+    for (i = 0; i <= 3; i++) {
+      tempJmlBobotDiam[i] = 0;
+      for (j = 0; j <= 3; j++) {
+        tempJmlBobotDiam[i] = jmlBobotDiam[i] + bobotDiam[i][j];
       }
     }
+    setJmlBobotDiam(tempJmlBobotDiam);
 
     for (i = 0; i <= 3; i++) {
       jmlNormalisasiDiam[i] = 0;
@@ -188,8 +207,46 @@ const Result = () => {
     for (i = 0; i < jmlNormalisasiDiam.length; i++) {
       prioritasDiam[i] = jmlNormalisasiDiam[i] / 4;
     }
+
+    //Diameter
+    if (diameter === "1") {
+      setBobotPeruntukan([
+        [1, 1 / 9],
+        [9, 1],
+      ]);
+    } else if (diameter === "2") {
+      setBobotPeruntukan([
+        [1, 9],
+        [1 / 9, 1],
+      ]);
+    }
+
+    var tempJmlBobotPerunt = [];
+    for (i = 0; i <= 1; i++) {
+      tempJmlBobotPerunt[i] = 0;
+      for (j = 0; j <= 1; j++) {
+        tempJmlBobotPerunt[i] = jmlBobotPerunt[i] + bobotPeruntukan[i][j];
+      }
+    }
+    setJmlBobotPerunt(tempJmlBobotPerunt);
+
+    for (i = 0; i <= 1; i++) {
+      jmlNormalisasiPeruntukan[i] = 0;
+      for (j = 0; j <= 1; j++) {
+        normalisasiDiam[j][i] = bobotPeruntukan[j][i] / jmlBobotPerunt[j];
+        jmlNormalisasiPeruntukan[i] =
+          jmlNormalisasiPeruntukan[i] + normalisasiPeruntukan[j][i];
+      }
+    }
+
+    for (i = 0; i < jmlNormalisasiPeruntukan.length; i++) {
+      prioritasPeruntukan[i] = jmlNormalisasiPeruntukan[i] / 4;
+    }
   }, []);
+  console.log(bobotHarga);
+  console.log(bobotDiam);
   console.log(jmlBobotHrg);
+  console.log(jmlBobotDiam);
   return (
     <div className="result-container">
       <div className="result-content-container">
