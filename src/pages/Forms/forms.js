@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import "./forms.css";
 
 import HomeImage from "../../assets/images/home image.png";
+import { useNavigate } from "react-router-dom";
 
 const Forms = () => {
+  const navigate = useNavigate();
   const [jenis, setJenis] = useState("");
   const [ring, setRing] = useState("");
   const [price, setPrice] = useState("");
   const [usage, setUsage] = useState("");
 
-  const onSubmit = () => {
+  const onSubmit = (props) => {
+    navigate("/result", {
+      state: { jenis: jenis, diameter: ring, harga: price, penggunaan: usage },
+    });
     console.log(jenis);
     console.log(ring);
     console.log(price);
@@ -21,7 +26,7 @@ const Forms = () => {
       <div className="form-content-container">
         <div className="form-content">
           <div className="form-content-item">
-            <div className="form-input">
+            {/* <div className="form-input">
               <label class="form-label" for="jenisMotor">
                 JENIS MOTOR
               </label>
@@ -30,24 +35,24 @@ const Forms = () => {
                 id="jenisMotor"
                 onChange={(e) => setJenis(e.target.value)}
               >
-                <option value={1}>Bebek</option>
-                <option value={2}>Matic</option>
-                <option value={3}>Sport</option>
+                <option value={"bebek"}>Bebek</option>
+                <option value={"matic"}>Matic</option>
+                <option value={"sport"}>Sport</option>
               </select>
-            </div>
+            </div> */}
             <div className="form-input">
               <label class="form-label" for="jenisMotor">
-                UKURAN VELG
+                DIAMETER VELG
               </label>
               <select
                 className="form-selection"
                 id="jenisMotor"
                 onChange={(e) => setRing(e.target.value)}
               >
-                <option value={1}>10</option>
-                <option value={2}>12</option>
-                <option value={3}>14</option>
-                <option value={4}>17</option>
+                <option value={"10"}>10</option>
+                <option value={"12"}>12</option>
+                <option value={"14"}>14</option>
+                <option value={"17"}>17</option>
               </select>
             </div>
             <div className="form-input">
