@@ -1,11 +1,11 @@
 .form-content-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   flex: 1;
   padding: 25px;
   width: 100%;
-  background: rgba(161, 161, 161, 0.192);
+  /* background: rgba(161, 161, 161, 0.192); */
   border-radius: 10px;
 }
 
@@ -14,12 +14,16 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 15px;
-  flex: 2;
+  flex: 1;
 }
 
 .form-content {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid black; */
+  height: 100%;
 }
 
 .form-input {
@@ -32,7 +36,11 @@
 .form-image {
   display: flex;
   justify-content: center;
-  flex: 1;
+  width: 250px;
+}
+
+.form-image img {
+  width: 100%;
 }
 
 .form-label {
@@ -45,6 +53,7 @@
   padding: 10px;
   border-radius: 5px;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .form-selection {

@@ -17,6 +17,10 @@
   padding: 5px 25px;
 }
 
+.header-logo {
+  cursor: pointer;
+}
+
 .header-logo-text {
   font-size: 22px;
 }

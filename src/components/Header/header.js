@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="header-content">
-        <div className="header-logo">
+        <div onClick={() => navigate("/")} className="header-logo">
           <h1 className="header-logo-text">BAN-TUIN</h1>
         </div>
         <button className="header-button" onClick={() => navigate("/")}>

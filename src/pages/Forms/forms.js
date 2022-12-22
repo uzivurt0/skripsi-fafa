@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 import "./forms.css";
 
-import HomeImage from "../../assets/images/home image.png";
+import HomeImage from "../../assets/images/icon ban.png";
 import { useNavigate } from "react-router-dom";
 
 const Forms = () => {
   const navigate = useNavigate();
-  const [jenis, setJenis] = useState("");
+  const [ukuran, setUkuran] = useState("");
   const [ring, setRing] = useState("");
   const [price, setPrice] = useState("");
-  const [usage, setUsage] = useState("");
+  const [compound, setCompound] = useState("");
 
   const onSubmit = (props) => {
     navigate("/result", {
-      state: { jenis: jenis, diameter: ring, harga: price, penggunaan: usage },
+      state: {
+        diameter: ring,
+        harga: price,
+        ukran: ukuran,
+        compounds: compound,
+      },
     });
-    console.log(jenis);
     console.log(ring);
     console.log(price);
-    console.log(usage);
   };
 
   return (
     <div className="home-container">
       <div className="form-content-container">
         <div className="form-content">
+          <div className="form-image">
+            <img src={HomeImage} alt="Ban" />
+          </div>
           <div className="form-content-item">
             {/* <div className="form-input">
               <label class="form-label" for="jenisMotor">
@@ -49,10 +55,9 @@ const Forms = () => {
                 id="jenisMotor"
                 onChange={(e) => setRing(e.target.value)}
               >
-                <option value={"10"}>10</option>
-                <option value={"12"}>12</option>
-                <option value={"14"}>14</option>
-                <option value={"17"}>17</option>
+                <option value={12}>12</option>
+                <option value={14}>14</option>
+                <option value={17}>17</option>
               </select>
             </div>
             <div className="form-input">
@@ -71,25 +76,40 @@ const Forms = () => {
             </div>
             <div className="form-input">
               <label class="form-label" for="jenisMotor">
-                PERUNTUKAN
+                LEBAR
               </label>
               <select
                 className="form-selection"
                 id="jenisMotor"
-                onChange={(e) => setUsage(e.target.value)}
+                onChange={(e) => setUkuran(e.target.value)}
               >
-                <option value={1}>Harian</option>
-                <option value={2}>Balap</option>
+                <option value={90}>90</option>
+                <option value={100}>100</option>
+                <option value={110}>110</option>
+                <option value={120}>120</option>
+                <option value={130}>130</option>
+                <option value={140}>140</option>
+              </select>
+            </div>
+            <div className="form-input">
+              <label class="form-label" for="jenisMotor">
+                JENIS COMPOUND
+              </label>
+              <select
+                className="form-selection"
+                id="jenisMotor"
+                onChange={(e) => setCompound(e.target.value)}
+              >
+                <option value={1}>Soft-Compound</option>
+                <option value={2}>Medium-Compound</option>
+                <option value={3}>Hard-Compound</option>
               </select>
             </div>
             <div className="form-input">
               <button className="home-button" onClick={() => onSubmit()}>
-                Submit
+                SUBMIT
               </button>
             </div>
-          </div>
-          <div className="form-image">
-            <img src={HomeImage} alt="Ban" />
           </div>
         </div>
       </div>

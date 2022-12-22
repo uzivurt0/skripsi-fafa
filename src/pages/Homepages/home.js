@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./home.css";
 import Testing from "../../assets/images/maxresdefault.jpg";
 import Diablo from "../../assets/images/duablorossooo.jpg";
-import HomeImage from "../../assets/images/home image.png";
+import HomeImage from "../../assets/images/icon ban.png";
 import Maxxis from "../../assets/images/maxxis.jpg";
 import Battlax from "../../assets/images/battlax.jpg";
 
@@ -25,10 +25,13 @@ const Home = () => {
                 MULAI
               </button>
             </div>
-            <img src={HomeImage} alt="Home" />
+            <div className="home-image">
+              <img src={HomeImage} alt="Home" />
+            </div>
           </div>
         </div>
       </div>
+      <div style={{ height: 25 }} />
       <div className="home-content-gallery">
         <div className="home-content-gallery-container">
           <div className="home-content-gallery-wrapper">
@@ -51,6 +54,30 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div style={{ height: 25 }} />
+      <div className="home-content-news">
+        <div className="home-content-news-img-container">
+          <div className="home-content-news-img">
+            <img src={Maxxis} />
+          </div>
+        </div>
+        <div className="home-content-news-content">
+          <div>
+            <h2>Judul</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <button className="btn-news">Lihat Berita</button>
+        </div>
+      </div>
+      <div style={{ height: 25 }} />
     </>
   );
 };
