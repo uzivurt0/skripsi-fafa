@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./HomeAdmin.css";
 import CardResult from "../../components/card-result/card-result";
-import Placeholder from "../../assets/images/banPlaceholder.jpg";
-import axios from "axios";
+import Placeholder from "../../assets/images/imgPlaceholder.jpg";
+import axios, { Axios } from "axios";
 import { v4 as uuid } from "uuid";
 import DataTable from "react-data-table-component";
+import { useNavigate } from "react-router-dom";
 
 const HomeAdmin = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -21,41 +23,87 @@ const HomeAdmin = () => {
     }
 
     getAllBan();
-
-    const unique_id = uuid();
-    console.log(unique_id.slice(0, 8));
   }, []);
 
-  const banColumns = [
-    {
-      name: "Merk Ban",
-      selector: (row) => row.merk_ban,
-    },
-    {
-      name: "Ukuran Ban",
-      selector: (row) => (
-        <p>
-          {row.ukuran}/{row.profil}-{row.ring}
-        </p>
-      ),
-    },
-    {
-      name: "Harga Ban",
-      selector: (row) => row.harga,
-    },
-    {
-      name: "Peruntukan",
-      selector: (row) => row.peruntukan,
-    },
-    {
-      name: " ",
-      selector: (row) => <button>Edit</button>,
-    },
-  ];
+  const deleteData = (id) => {
+    axios.delete(`http://localhost:5000/api/deleteban/${id}`);
+    window.location.reload();
+  };
 
   return (
-    <div className="home-admin">
-      <DataTable columns={banColumns} data={data} />
+    <div className="result-container">
+      <div className="result-content-container">
+        <div className="result-content">
+          <div className="result-content-heading">
+            <h2>Daftar Ban</h2>
+            <button
+              className="result-content-heading-button"
+              onClick={() => navigate("/adminbantu1n/addban")}
+            >
+              Tambah
+            </button>
+          </div>
+          {data.map((item) => (
+            <div className="card-result">
+              <div className="card-result-img">
+                <img src={Placeholder} alt="ResultImage" />
+              </div>
+              <div className="card-result-description">
+                <div className="card-result-description-name">
+                  <h2>Merk Ban</h2>
+                  <div style={{ height: 10 }}>&nbsp;</div>
+                  <p>{item.merk_ban}</p>
+                </div>
+                <div className="card-result-description-detail">
+                  <div className="card-result-description-detail-item">
+                    <h3>Ukuran</h3>
+                    <div style={{ height: 5 }}>&nbsp;</div>
+                    <p>
+                      {item.ukuran}/{item.profil} - {item.ring}
+                    </p>
+                  </div>
+                  <div className="card-result-description-detail-item">
+                    <h3>Harga</h3>
+                    <div style={{ height: 5 }}>&nbsp;</div>
+                    <p>Rp. {item.harga}</p>
+                  </div>
+                  <div className="card-result-description-detail-item">
+                    <h3>Compound</h3>
+                    <div style={{ height: 5 }}>&nbsp;</div>
+                    <p>Medium Compound</p>
+                  </div>
+                </div>
+              </div>
+              <div className="card-result-edit-delete">
+                <button
+                  onClick={() => {
+                    deleteData(item.id);
+                  }}
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button
+                  onClick={() =>
+                    navigate("/adminbantu1n/editban", {
+                      state: {
+                        id: item.id,
+                        merek: item.merk_ban,
+                        diameter: item.ring,
+                        hargaa: item.harga,
+                        ukurans: item.ukuran,
+                        profils: item.profil,
+                        compounds: item.compound,
+                      },
+                    })
+                  }
+                >
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

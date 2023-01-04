@@ -47,7 +47,7 @@ const Forms = () => {
               </select>
             </div> */}
             <div className="form-input">
-              <label class="form-label" for="jenisMotor">
+              <label className="form-label" for="jenisMotor">
                 DIAMETER VELG
               </label>
               <select
@@ -61,7 +61,7 @@ const Forms = () => {
               </select>
             </div>
             <div className="form-input">
-              <label class="form-label" for="jenisMotor">
+              <label className="form-label" for="jenisMotor">
                 HARGA
               </label>
               <select
@@ -69,13 +69,13 @@ const Forms = () => {
                 id="jenisMotor"
                 onChange={(e) => setPrice(e.target.value)}
               >
-                <option value={1}>Kurang dari Rp.400.000</option>
-                <option value={2}>Rp.400.000 s/d Rp.600.000</option>
-                <option value={3}>Diatas Rp. 600.000</option>
+                <option value={1}>Kurang dari Rp.500.000</option>
+                <option value={2}>Rp.500.000 s/d Rp.1.000.000</option>
+                <option value={3}>Diatas Rp. 1.000.000</option>
               </select>
             </div>
             <div className="form-input">
-              <label class="form-label" for="jenisMotor">
+              <label className="form-label" for="jenisMotor">
                 LEBAR
               </label>
               <select
@@ -92,7 +92,7 @@ const Forms = () => {
               </select>
             </div>
             <div className="form-input">
-              <label class="form-label" for="jenisMotor">
+              <label className="form-label" for="jenisMotor">
                 JENIS COMPOUND
               </label>
               <select

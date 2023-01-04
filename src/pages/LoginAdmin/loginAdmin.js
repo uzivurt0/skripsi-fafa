@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./loginAdmin.css";
 import "../../pages/Homepages/home.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginAdmin = () => {
   const navigate = useNavigate();
+  const [data, setData] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [password, setPassword] = useState([]);
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const response = await axios.get("http://localhost:5000/api/user");
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getUser();
+  });
+
+  const onSubmit = () => {
+    console.log(data);
+    console.log(data[0].Username);
+    console.log(username, password);
+    if (username === data[0].Username && password === data[0].password) {
+      navigate("/adminbantu1n/home");
+    } else {
+      window.alert("Silahkan masukkan username dan password yang sesuai!");
+    }
+  };
 
   return (
     <>
@@ -15,17 +42,22 @@ const LoginAdmin = () => {
             <div className="login-content-item">
               <div className="form-input">
                 <label for="username">Email</label>
-                <input type="text" id="username" />
+                <input
+                  type="text"
+                  id="username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="form-input">
                 <label for="password">Password</label>
-                <input type="password" id="password" />
+                <input
+                  type="password"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <div className="form-input">
-                <button
-                  onClick={() => navigate("/adminbantu1n/home")}
-                  className="login-button"
-                >
+                <button onClick={() => onSubmit()} className="login-button">
                   Login
                 </button>
               </div>

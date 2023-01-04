@@ -63,15 +63,19 @@ const Home = () => {
         </div>
         <div className="home-content-news-content">
           <div>
-            <h2>Judul</h2>
+            <h2>
+              7 Cara Memilih Ban motor Matic Tubeless Berkualitas Agar Awet
+            </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Ban motor oleh penggunanya sering dianggap mudah sekali dipilih.
+              Padahal kenyataanya tidak, karena sebelumnya harus melakukan
+              beberapa pertimbangan untuk membeli ban yang tepat. Apalagi jika
+              ban yang dimaksud adalah untuk motor matic jenis tubeless.
+              Melakukan pemilihan sebelum membeli ban matic ini penting, karena
+              diluar sana banyak penjual ban yang bagus tapi kualitasnya tidak
+              mumpuni. Selain itu, adanya beragam jenis ban juga perlu
+              dipertimbangan. Untuk itu, berikut 7 cara memilih ban motor matic
+              berkualitas agar lebih awet.
             </p>
           </div>
           <button className="btn-news">Lihat Berita</button>
