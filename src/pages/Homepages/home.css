@@ -177,5 +177,6 @@
 
   .home-content-item p {
     font-size: 14px;
+    padding: 0;
   }
 }
