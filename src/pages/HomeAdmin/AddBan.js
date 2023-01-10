@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./HomeAdmin.css";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const AddBan = () => {
+  const navigate = useNavigate();
   const [ring, setRing] = useState("");
   const [compound, setCompound] = useState("");
   const [merk, setMerk] = useState("");
@@ -12,16 +14,21 @@ const AddBan = () => {
   const [harga, setHarga] = useState("");
 
   const onSubmit = () => {
-    const unique_id = uuid();
-    axios.post("http://localhost:5000/api/addban", {
-      id: unique_id.slice(0, 8),
-      merk_ban: merk,
-      hargas: parseInt(harga),
-      rings: parseInt(ring),
-      ukurans: ukuran,
-      profils: profil,
-      compounds: compound,
-    });
+    const unique_id = Math.floor(Math.random() * 1000000);
+    console.log(unique_id);
+    axios.post(
+      "https://skripsi-fafa-backend-production.up.railway.app/api/addban",
+      {
+        id: unique_id,
+        merk_ban: merk,
+        hargas: parseInt(harga),
+        rings: parseInt(ring),
+        ukurans: ukuran,
+        profils: profil,
+        compounds: compound,
+      }
+    );
+    navigate("/adminbantu1n/home");
   };
 
   return (
@@ -79,9 +86,9 @@ const AddBan = () => {
           onChange={(e) => setCompound(e.target.value)}
         >
           <option value={""}></option>
-          <option value={"Soft-Compound"}>Soft-Compound</option>
-          <option value={"Medium-Compound"}>Medium-Compound</option>
-          <option value={"Hard-Compound"}>Hard-Compound</option>
+          <option value={"Soft"}>Soft-Compound</option>
+          <option value={"Medium"}>Medium-Compound</option>
+          <option value={"Hard"}>Hard-Compound</option>
         </select>
       </div>
       <div className="add-ban-container">

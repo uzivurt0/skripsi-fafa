@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./result.css";
 // import CardResult from "../../components/card-result/card-result";
 import axios from "axios";
-import Placeholder from "../../assets/images/banPlaceholder.jpg";
+import Placeholder from "../../assets/images/imgPlaceholder.jpg";
 import { useLocation } from "react-router-dom";
 // import { v4 as uuid } from "uuid";
 
@@ -293,7 +293,7 @@ const Result = () => {
           tempJmlBobotPerunt[i] = tempJmlBobotPerunt[i] + bobotCompound[i][j];
         }
       }
-      setJmlBobotPerunt(tempJmlBobotPerunt);
+      // setJmlBobotPerunt(tempJmlBobotPerunt);
 
       for (i = 0; i <= 2; i++) {
         jmlNormalisasiPeruntukan[i] = 0;
@@ -408,13 +408,13 @@ const Result = () => {
         prioritasUkuran[i] = jmlNormalisasiUkuran[i] / 4;
       }
       console.log(prioritasUkuran);
-      var perhitunganHarga = 0;
-      var perhitunganRing = 0;
-      var perhitunganUkuran = 0;
-      var perhitunganCompound = 0;
-      var totalPerhitungan = 0;
 
       for (i = 0; i < filtered.length; i++) {
+        var perhitunganHarga = 0;
+        var perhitunganRing = 0;
+        var perhitunganUkuran = 0;
+        var perhitunganCompound = 0;
+        var totalPerhitungan = 0;
         if (filtered[i].harga <= 500000) {
           perhitunganHarga = prioritasHrg[0] * prioritas[1];
         } else if (filtered[i].harga > 500000 && filtered[i].harga <= 800000) {
@@ -432,17 +432,25 @@ const Result = () => {
         }
 
         if (filtered[i].ukuran === "90") {
-          perhitunganUkuran = prioritasUkuran[0] * prioritas[3];
+          perhitunganUkuran = prioritasUkuran[0] * prioritas[2];
         } else if (filtered[i].ukuran === "100") {
-          perhitunganUkuran = prioritasUkuran[1] * prioritas[3];
+          perhitunganUkuran = prioritasUkuran[1] * prioritas[2];
         } else if (filtered[i].ukuran === "110") {
-          perhitunganUkuran = prioritasUkuran[2] * prioritas[3];
+          perhitunganUkuran = prioritasUkuran[2] * prioritas[2];
         } else if (filtered[i].ukuran === "120") {
-          perhitunganUkuran = prioritasUkuran[3] * prioritas[3];
+          perhitunganUkuran = prioritasUkuran[3] * prioritas[2];
         } else if (filtered[i].ukuran === "130") {
-          perhitunganUkuran = prioritasUkuran[4] * prioritas[3];
+          perhitunganUkuran = prioritasUkuran[4] * prioritas[2];
         } else if (filtered[i].ukuran === "140") {
-          perhitunganUkuran = prioritasUkuran[5] * prioritas[3];
+          perhitunganUkuran = prioritasUkuran[5] * prioritas[2];
+        }
+
+        if (filtered[i].compound === "Soft") {
+          perhitunganCompound = prioritasPeruntukan[0] * prioritas[3];
+        } else if (filtered[i].compound === "Medium") {
+          perhitunganCompound = prioritasPeruntukan[1] * prioritas[3];
+        } else {
+          perhitunganCompound = prioritasPeruntukan[2] * prioritas[3];
         }
 
         totalPerhitungan =
@@ -458,10 +466,14 @@ const Result = () => {
           ring: filtered[i].ring,
           ukuran: filtered[i].ukuran,
           profil: filtered[i].profil,
+          compouns: filtered[i].compound,
+          imgs: filtered[i].image,
           totalHitung: totalPerhitungan,
         });
 
         setResult(finalFilter);
+        console.log(finalFilter);
+        console.log(result);
       }
     },
     // eslint-disable-next-line
@@ -477,9 +489,16 @@ const Result = () => {
             .slice(0, 4)
             .map((item) => (
               <div className="card-result">
-                <div className="card-result-img">
-                  <img src={Placeholder} alt="ResultImage" />
-                </div>
+                {item.imgs ? (
+                  <div className="card-result-img">
+                    <img src={item.imgs} alt="ResultImage" />
+                  </div>
+                ) : (
+                  <div className="card-result-img">
+                    <img src={Placeholder} alt="ResultImage" />
+                  </div>
+                )}
+
                 <div className="card-result-description">
                   <div className="card-result-description-name">
                     <h2>Merk Ban</h2>
@@ -502,7 +521,7 @@ const Result = () => {
                     <div className="card-result-description-detail-item">
                       <h3>Compound</h3>
                       <div style={{ height: 5 }}>&nbsp;</div>
-                      <p>Medium Compound</p>
+                      <p>{item.compouns} Compound</p>
                     </div>
                   </div>
                 </div>

@@ -50,9 +50,16 @@ const HomeAdmin = () => {
           </div>
           {data.map((item) => (
             <div className="card-result">
-              <div className="card-result-img">
-                <img src={Placeholder} alt="ResultImage" />
-              </div>
+              {item.image ? (
+                <div className="card-result-img">
+                  <img src={item.image} alt="ResultImage" />
+                </div>
+              ) : (
+                <div className="card-result-img">
+                  <img src={Placeholder} alt="ResultImage" />
+                </div>
+              )}
+
               <div className="card-result-description">
                 <div className="card-result-description-name">
                   <h2>Merk Ban</h2>
@@ -75,7 +82,7 @@ const HomeAdmin = () => {
                   <div className="card-result-description-detail-item">
                     <h3>Compound</h3>
                     <div style={{ height: 5 }}>&nbsp;</div>
-                    <p>Medium Compound</p>
+                    <p>{item.compound} Compound</p>
                   </div>
                 </div>
               </div>
