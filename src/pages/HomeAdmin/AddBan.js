@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./HomeAdmin.css";
 import axios from "axios";
-import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 const AddBan = () => {
