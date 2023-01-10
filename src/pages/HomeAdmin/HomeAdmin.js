@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from "react";
 import "./HomeAdmin.css";
-import CardResult from "../../components/card-result/card-result";
 import Placeholder from "../../assets/images/imgPlaceholder.jpg";
-import axios, { Axios } from "axios";
-import { v4 as uuid } from "uuid";
-import DataTable from "react-data-table-component";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const HomeAdmin = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    async function getAllBan() {
-      try {
-        const response = await axios.get(
-          "https://skripsi-fafa-backend-production.up.railway.app/api/daftarban"
-        );
-        setData(response.data);
-        console.log(data);
-      } catch (error) {
-        console.log(error);
+  useEffect(
+    () => {
+      async function getAllBan() {
+        try {
+          const response = await axios.get(
+            "https://skripsi-fafa-backend-production.up.railway.app/api/daftarban"
+          );
+          setData(response.data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
       }
-    }
 
-    getAllBan();
-  }, []);
+      getAllBan();
+    },
+    // eslint-disable-next-line
+    []
+  );
 
   const deleteData = (id) => {
     axios.delete(
