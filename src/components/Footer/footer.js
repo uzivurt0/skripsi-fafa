@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <footer className="footer-main">
         <div className="footer-logo">
-          <img src={IconFooter} />
+          <img src={IconFooter} alt="icon footer" />
           <p>&copy; BAN-TUIN</p>
         </div>
         <div className="footer-text">
