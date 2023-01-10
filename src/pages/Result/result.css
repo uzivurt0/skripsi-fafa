@@ -121,3 +121,16 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .card-result {
+    flex-direction: column;
+    min-width: 100%;
+  }
+  .card-result-description h2,
+  .card-result-description p,
+  .card-result-description-detail-item h3,
+  .card-result-description-detail-item p {
+    font-size: 14px;
+  }
+}
