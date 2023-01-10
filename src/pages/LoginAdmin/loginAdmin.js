@@ -12,21 +12,24 @@ const LoginAdmin = () => {
   useEffect(() => {
     async function getUser() {
       try {
-        const response = await axios.get("http://localhost:5000/api/user");
+        const response = await axios.get(
+          "https://skripsi-fafa-backend-production.up.railway.app/api/user"
+        );
         setData(response.data);
+        console.log(response);
       } catch (error) {
         console.log(error);
       }
     }
 
     getUser();
-  });
+  }, []);
 
   const onSubmit = () => {
     console.log(data);
-    console.log(data[0].Username);
+    console.log(data[0].username);
     console.log(username, password);
-    if (username === data[0].Username && password === data[0].password) {
+    if (username === data[0].username && password === data[0].password) {
       navigate("/adminbantu1n/home");
     } else {
       window.alert("Silahkan masukkan username dan password yang sesuai!");

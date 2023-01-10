@@ -14,7 +14,9 @@ const HomeAdmin = () => {
   useEffect(() => {
     async function getAllBan() {
       try {
-        const response = await axios.get("http://localhost:5000/api/daftarban");
+        const response = await axios.get(
+          "https://skripsi-fafa-backend-production.up.railway.app/api/daftarban"
+        );
         setData(response.data);
         console.log(data);
       } catch (error) {
@@ -26,7 +28,9 @@ const HomeAdmin = () => {
   }, []);
 
   const deleteData = (id) => {
-    axios.delete(`http://localhost:5000/api/deleteban/${id}`);
+    axios.delete(
+      `https://skripsi-fafa-backend-production.up.railway.app/api/deleteban/${id}`
+    );
     window.location.reload();
   };
 

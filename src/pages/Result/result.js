@@ -124,7 +124,9 @@ const Result = () => {
     }
     async function getAllBan() {
       try {
-        const response = await axios.get("http://localhost:5000/api/daftarban");
+        const response = await axios.get(
+          "https://skripsi-fafa-backend-production.up.railway.app/api/daftarban"
+        );
         setData(response.data);
         setfiltered(
           data.filter(
@@ -137,6 +139,9 @@ const Result = () => {
           )
         );
         console.log(filtered);
+        console.log(
+          response.data.filter((item) => item.ring.toString() === diameter)
+        );
       } catch (error) {
         console.log(error);
       }
@@ -452,7 +457,7 @@ const Result = () => {
 
       setResult(finalFilter);
     }
-  }, [data.length, filtered.length]);
+  }, [data.length, filtered.length, finalFilter.length]);
 
   return (
     <div className="result-container">
