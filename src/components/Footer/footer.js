@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import IconFooter from "../../assets/images/icon ban putih.png";
 import "./footer.css";
 
