@@ -484,49 +484,55 @@ const Result = () => {
     <div className="result-container">
       <div className="result-content-container">
         <div className="result-content">
-          {result
-            .sort((a, b) => b.totalHitung - a.totalHitung)
-            .slice(0, 4)
-            .map((item) => (
-              <div className="card-result">
-                {item.imgs ? (
-                  <div className="card-result-img">
-                    <img src={item.imgs} alt="ResultImage" />
-                  </div>
-                ) : (
-                  <div className="card-result-img">
-                    <img src={Placeholder} alt="ResultImage" />
-                  </div>
-                )}
+          {result ? (
+            <>
+              {result
+                .sort((a, b) => b.totalHitung - a.totalHitung)
+                .slice(0, 4)
+                .map((item) => (
+                  <div className="card-result">
+                    {item.imgs ? (
+                      <div className="card-result-img">
+                        <img src={item.imgs} alt="ResultImage" />
+                      </div>
+                    ) : (
+                      <div className="card-result-img">
+                        <img src={Placeholder} alt="ResultImage" />
+                      </div>
+                    )}
 
-                <div className="card-result-description">
-                  <div className="card-result-description-name">
-                    <h2>Merk Ban</h2>
-                    <div style={{ height: 10 }}>&nbsp;</div>
-                    <p>{item.merk}</p>
+                    <div className="card-result-description">
+                      <div className="card-result-description-name">
+                        <h2>Merk Ban</h2>
+                        <div style={{ height: 10 }}>&nbsp;</div>
+                        <p>{item.merk}</p>
+                      </div>
+                      <div className="card-result-description-detail">
+                        <div className="card-result-description-detail-item">
+                          <h3>Ukuran</h3>
+                          <div style={{ height: 5 }}>&nbsp;</div>
+                          <p>
+                            {item.ukuran}/{item.profil} - {item.ring}
+                          </p>
+                        </div>
+                        <div className="card-result-description-detail-item">
+                          <h3>Harga</h3>
+                          <div style={{ height: 5 }}>&nbsp;</div>
+                          <p>Rp. {item.hargas}</p>
+                        </div>
+                        <div className="card-result-description-detail-item">
+                          <h3>Compound</h3>
+                          <div style={{ height: 5 }}>&nbsp;</div>
+                          <p>{item.compouns} Compound</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="card-result-description-detail">
-                    <div className="card-result-description-detail-item">
-                      <h3>Ukuran</h3>
-                      <div style={{ height: 5 }}>&nbsp;</div>
-                      <p>
-                        {item.ukuran}/{item.profil} - {item.ring}
-                      </p>
-                    </div>
-                    <div className="card-result-description-detail-item">
-                      <h3>Harga</h3>
-                      <div style={{ height: 5 }}>&nbsp;</div>
-                      <p>Rp. {item.hargas}</p>
-                    </div>
-                    <div className="card-result-description-detail-item">
-                      <h3>Compound</h3>
-                      <div style={{ height: 5 }}>&nbsp;</div>
-                      <p>{item.compouns} Compound</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                ))}
+            </>
+          ) : (
+            <h1>Mohon maaf belum ada rekomendasi yang sesuai dengan mu :(</h1>
+          )}
         </div>
       </div>
     </div>
