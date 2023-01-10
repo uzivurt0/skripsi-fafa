@@ -1,10 +1,10 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import "./App.css";
 import { Footer, Header } from "./components";
 import RouterPage from "./router/RouterPage";
 
 function App() {
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <div className="App">
       <Header />
