@@ -165,3 +165,9 @@
   padding: 15px 35px;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+  .home-content-news-img {
+    width: 350px;
+  }
+}
