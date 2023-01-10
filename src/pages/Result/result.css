@@ -125,6 +125,7 @@
 @media only screen and (max-width: 600px) {
   .card-result {
     flex-direction: column;
+    min-width: unset;
     max-width: 350px !important;
   }
   .card-result-description h2,
