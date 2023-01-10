@@ -181,6 +181,9 @@
   }
   .home-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  .home-image {
+    width: 250px;
   }
 }
