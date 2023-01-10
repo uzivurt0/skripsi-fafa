@@ -58,7 +58,7 @@ const Home = () => {
       <div className="home-content-news">
         <div className="home-content-news-img-container">
           <div className="home-content-news-img">
-            <img src={Maxxis} />
+            <img src={Maxxis} alt="gambar" />
           </div>
         </div>
         <div className="home-content-news-content">

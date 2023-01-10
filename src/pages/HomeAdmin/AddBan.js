@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./HomeAdmin.css";
-import CardResult from "../../components/card-result/card-result";
-import Placeholder from "../../assets/images/banPlaceholder.jpg";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { v4 as uuid } from "uuid";
-import DataTable from "react-data-table-component";
 
 const AddBan = () => {
   const [ring, setRing] = useState("");
