@@ -172,12 +172,12 @@
   }
 
   .home-content h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .home-content-item p {
-    font-size: 14px;
-    line-height: 12px;
+    font-size: 16px;
+    line-height: 16px;
   }
   .home-content {
     display: flex;
