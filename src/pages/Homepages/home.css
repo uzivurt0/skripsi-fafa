@@ -177,6 +177,10 @@
 
   .home-content-item p {
     font-size: 14px;
-    line-height: 10px;
+    line-height: 12px;
+  }
+  .home-content {
+    display: flex;
+    flex-direction: column;
   }
 }
