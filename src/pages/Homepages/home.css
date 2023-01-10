@@ -172,11 +172,11 @@
   }
 
   .home-content h1 {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .home-content-item p {
-    font-size: 10px;
+    font-size: 14px;
     line-height: 10;
   }
 }
