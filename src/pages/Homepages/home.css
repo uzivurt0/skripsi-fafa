@@ -170,4 +170,13 @@
   .home-content-news-img {
     width: 350px;
   }
+
+  .home-content h1 {
+    font-size: 14px;
+  }
+
+  .home-content-item p {
+    font-size: 10px;
+    line-height: 10;
+  }
 }
