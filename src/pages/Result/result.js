@@ -220,6 +220,8 @@ const Result = () => {
         prioritasHrg[i] = jmlNormalisasiHrg[i] / 4;
       }
 
+      console.log(prioritasHrg);
+
       //Diameter
       if (diameter === "12") {
         setBobotDiam([
