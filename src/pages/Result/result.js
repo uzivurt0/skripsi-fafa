@@ -420,7 +420,7 @@ const Result = () => {
         var totalPerhitungan = 0;
         if (filtered[i].harga <= 500000) {
           perhitunganHarga = prioritasHrg[0] * prioritas[1];
-        } else if (filtered[i].harga > 500000 && filtered[i].harga <= 800000) {
+        } else if (filtered[i].harga > 500000 && filtered[i].harga <= 1000000) {
           perhitunganHarga = prioritasHrg[1] * prioritas[1];
         } else {
           perhitunganHarga = prioritasHrg[2] * prioritas[1];
