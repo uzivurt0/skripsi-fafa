@@ -217,9 +217,8 @@ const Result = () => {
 
       for (i = 0; i < jmlNormalisasiHrg.length; i++) {
         prioritasHrg[i] = jmlNormalisasiHrg[i] / 4;
+        console.log(prioritasHrg);
       }
-
-      console.log(prioritasHrg);
 
       //Diameter
       if (diameter === "12") {
