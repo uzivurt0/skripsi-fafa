@@ -21,6 +21,7 @@ const Result = () => {
   const [result, setResult] = useState([]);
 
   var jmlBobot = [];
+  //eslint-disable-next-line
   const [jmlBobotHrg, setJmlBobotHrg] = useState([]);
   // const [jmlBobotDiam, setJmlBobotDiam] = useState([0, 0, 0]);
   // eslint-disable-next-line
@@ -205,7 +206,7 @@ const Result = () => {
           console.log("masuk itung");
         }
       }
-      setJmlBobotHrg(tempJmlBobotHrg);
+      // setJmlBobotHrg(tempJmlBobotHrg);
 
       for (i = 0; i <= 2; i++) {
         jmlNormalisasiHrg[i] = 0;
