@@ -210,7 +210,7 @@ const Result = () => {
       for (i = 0; i <= 2; i++) {
         jmlNormalisasiHrg[i] = 0;
         for (j = 0; j <= 2; j++) {
-          normalisasiHrg[j][i] = bobotHarga[j][i] / jmlBobotHrg[j];
+          normalisasiHrg[j][i] = bobotHarga[j][i] / tempJmlBobotHrg[j];
           jmlNormalisasiHrg[i] = jmlNormalisasiHrg[i] + normalisasiHrg[j][i];
         }
       }
@@ -260,7 +260,7 @@ const Result = () => {
       }
 
       for (i = 0; i < jmlNormalisasiDiam.length; i++) {
-        prioritasDiam[i] = jmlNormalisasiDiam[i] / 3;
+        prioritasDiam[i] = jmlNormalisasiDiam[i] / 4;
       }
       console.log(normalisasiDiam);
       console.log(jmlNormalisasiDiam);
