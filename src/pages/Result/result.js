@@ -213,6 +213,7 @@ const Result = () => {
           normalisasiHrg[j][i] = bobotHarga[j][i] / tempJmlBobotHrg[j];
           jmlNormalisasiHrg[i] = jmlNormalisasiHrg[i] + normalisasiHrg[j][i];
         }
+        console.log(jmlNormalisasiHrg);
       }
 
       for (i = 0; i < jmlNormalisasiHrg.length; i++) {
