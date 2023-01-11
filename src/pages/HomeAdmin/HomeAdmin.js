@@ -29,6 +29,7 @@ const HomeAdmin = () => {
   );
 
   const deleteData = (id) => {
+    console.log(id);
     axios.delete(
       `https://skripsi-fafa-backend-production.up.railway.app/api/deleteban/${id}`
     );
