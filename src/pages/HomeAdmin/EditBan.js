@@ -16,15 +16,18 @@ const EditBan = () => {
 
   const onSubmit = () => {
     console.log(merk, harga, ring, ukuran, profil, compound);
-    axios.put("http://localhost:5000/api/editban", {
-      id: location.state.id,
-      merk_ban: merk,
-      hargas: parseInt(harga),
-      rings: parseInt(ring),
-      ukurans: ukuran,
-      profils: profil,
-      compounds: compound,
-    });
+    axios.put(
+      "https://skripsi-fafa-backend-production.up.railway.app/api/editban",
+      {
+        id: location.state.id,
+        merk_ban: merk,
+        hargas: parseInt(harga),
+        rings: parseInt(ring),
+        ukurans: ukuran,
+        profils: profil,
+        compounds: compound,
+      }
+    );
 
     navigate("/adminbantu1n/home");
   };
