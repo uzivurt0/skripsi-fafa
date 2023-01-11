@@ -137,11 +137,10 @@ const Result = () => {
           setfiltered(
             data.filter(
               (item) =>
-                (item.ring.toString() === diameter && item.ukuran === ukuran) ||
-                (item.ring.toString() === diameter &&
-                  item.ukuran === ukuran &&
-                  item.harga >= harga0 &&
-                  item.harga <= harga1)
+                item.ring.toString() === diameter &&
+                item.ukuran === ukuran &&
+                item.harga >= harga0 &&
+                item.harga <= harga1
             )
           );
           console.log(filtered);
