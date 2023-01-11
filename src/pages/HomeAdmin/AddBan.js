@@ -11,10 +11,11 @@ const AddBan = () => {
   const [ukuran, setUkuran] = useState("");
   const [profil, setProfil] = useState("");
   const [harga, setHarga] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const onSubmit = () => {
     const unique_id = Math.floor(Math.random() * 1000000);
+    console.log(image);
     console.log(unique_id);
     const formData = new FormData();
     formData.append("id", unique_id);
