@@ -11,6 +11,7 @@ const AddBan = () => {
   const [ukuran, setUkuran] = useState("");
   const [profil, setProfil] = useState("");
   const [harga, setHarga] = useState("");
+  const [image, setImage] = useState("");
 
   const onSubmit = () => {
     const unique_id = Math.floor(Math.random() * 1000000);
@@ -19,10 +20,11 @@ const AddBan = () => {
     formData.append("id", unique_id);
     formData.append("merk_ban", merk);
     formData.append("hargas", parseInt(harga));
+    formData.append("ukuran", ukuran);
     formData.append("rings", parseInt(ring));
     formData.append("profils", profil);
     formData.append("compounds", compound);
-    formData.append("image", e.target.files[0]);
+    formData.append("image", image);
     axios
       .post(
         "https://skripsi-fafa-backend-production.up.railway.app/api/addban",
@@ -96,7 +98,11 @@ const AddBan = () => {
       </div>
       <div className="add-ban-container">
         <h3>Gambar</h3>
-        <input type="file" accept="image/" />
+        <input
+          type="file"
+          accept="image/"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
       </div>
       <button className="add-ban-btn" onClick={() => onSubmit()}>
         Submit
