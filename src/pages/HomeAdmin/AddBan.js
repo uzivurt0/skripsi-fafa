@@ -15,20 +15,19 @@ const AddBan = () => {
   const onSubmit = () => {
     const unique_id = Math.floor(Math.random() * 1000000);
     console.log(unique_id);
-    axios
-      .post(
-        "https://skripsi-fafa-backend-production.up.railway.app/api/addban",
-        {
-          id: unique_id,
-          merk_ban: merk,
-          hargas: parseInt(harga),
-          rings: parseInt(ring),
-          ukurans: ukuran,
-          profils: profil,
-          compounds: compound,
-        }
-      )
-      .then((res) => navigate("/adminbantu1n/home"));
+    axios.post(
+      "https://skripsi-fafa-backend-production.up.railway.app/api/addban",
+      {
+        id: unique_id,
+        merk_ban: merk,
+        hargas: parseInt(harga),
+        rings: parseInt(ring),
+        ukurans: ukuran,
+        profils: profil,
+        compounds: compound,
+      }
+    );
+    navigate("/adminbantu1n/home");
   };
 
   return (
