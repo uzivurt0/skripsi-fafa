@@ -26,6 +26,7 @@ const AddBan = () => {
     formData.append("profils", profil);
     formData.append("compounds", compound);
     formData.append("image", image);
+    console.log(formData);
     axios
       .post(
         "https://skripsi-fafa-backend-production.up.railway.app/api/addban",
