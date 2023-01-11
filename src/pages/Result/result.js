@@ -218,6 +218,7 @@ const Result = () => {
       }
 
       for (i = 0; i < jmlNormalisasiHrg.length; i++) {
+        prioritasHrg[i] = 0;
         prioritasHrg[i] = jmlNormalisasiHrg[i] / 4;
         console.log(prioritasHrg);
       }
